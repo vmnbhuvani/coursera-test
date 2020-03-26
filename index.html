@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
     <title>Coursera</title>
 </head>
-<body>
-    <h1>Hello Coursera, updated file</h1>
+
+<body ng-app="myFirstApp">
+    <h1>My first Angular app.</h1>
+    <div ng-controller="myFirstController">
+        {{name}}<br>
+        {{sayHello()}}<br>
+        <div> Your Name : <input type="text" ng-model="name" ng-keyup="displayNumeric();"><br></div>
+        Inside my input is : {{name}}<br>
+        <div>Total numeric value of person is : {{totalValue}}</div>
+    </div>
+    <h1>HTML% Custom Attributes</h1>
+    <div id="target" ng-app="myTestApp">
+        <section>Section 1
+            <article>Article 1</article>
+        </section>
+    </div>
+    <script>
+        // var elem = document.getElementById('target');
+        // console.log(elem);
+        // console.log(elem.getAttribute('ng-app'));
+        //hello
+        var elem2 = document.querySelector("[ng-app]");
+        console.log(elem2);
+        console.log(elem2.getAttribute('ng-app'));
+    </script>
+
 </body>
+
 </html>
